@@ -1088,21 +1088,11 @@ const moods = [
   "zombie",
   "zoomies",
   "zusia",
-  "Котенок",
-  "Кошка",
-  "Кошки",
-  "балдежный",
-  "играет",
-  "кушает",
-  "милый",
-  "пухляк",
-  "пушистая",
-  "спит",
-  "у_окошка",
-  "なら",
 ];
 
 function getRandomMood() {
   const randomIndex = Math.floor(Math.random() * moods.length);
   return moods[randomIndex];
 }
+
+export default getRandomMood;

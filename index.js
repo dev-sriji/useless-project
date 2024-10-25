@@ -8,6 +8,8 @@ import {
 import getRandomMessage from "./src/timer.js";
 import getRandomMessageBusy from "./src/busy.js";
 import getRandomMood from "./src/getmood.js";
+import fs from "fs";
+import axios from "axios";
 
 const adviceApi = "https://api.adviceslip.com/advice";
 
@@ -103,7 +105,16 @@ async function connectToWhatsApp() {
 
       return output;
     }
+    async function sendGif(url, senderId) {
+      const response = await axios.get(url, { responseType: "arraybuffer" });
+      const buffer = Buffer.from(response.data, "binary");
 
+      await sock.sendMessage(senderId, {
+        video: buffer,
+        caption: "hello!",
+        gifPlayback: true,
+      });
+    }
     function removeEmojiTags(input) {
       const regex = /\/emoji(?:hair)?|\/hair|\.hair|\.emoji|\.emojihair/g;
       return input.replace(regex, "");
@@ -172,13 +183,26 @@ async function connectToWhatsApp() {
           }
           break;
         case "guessmymood":
-          const name = m.name;
-          await sock.sendMessage(m.sender, {
-            text: "I Think You Are " + (await getRandomMood.mood),
-          });
-          setTimeout(async function () {
-            await sock.sendMessage(m.sender, { text: await result });
-          }, 2000);
+          const mood = getRandomMood();
+          await sock.sendMessage(
+            m.sender,
+            {
+              image: { url: "https://cataas.com/cat/sad" },
+              caption: "Here is an image from a URL!",
+            },
+            { ephemeralExpiration: 86400 }, // Corrected typo
+          );
+
+          // await sock.sendMessage(m.sender, {
+          //   text: "I think you are " + mood,
+          // });
+          // setTimeout(async function () {
+          //   await sock.sendMessage(m.sender, { text: "result" });
+          // }, 2000);
+          break;
+        case "cat":
+          sendGif("https://cataas.com/cat/gif", m.sender);
+          break;
       }
     }
   });
