@@ -1,6 +1,44 @@
-Here’s the updated README with your contact information included:
+<img width="1280" alt="readme-banner" src="https://github.com/user-attachments/assets/35332e92-44cb-425b-9dff-27bcf1023c6c">
 
-```markdown
+# Useless WhatsappBot 🎯
+
+
+## Basic Details
+### Team Name: Used Team
+
+
+### Team Members
+- Team Lead: Srijith - Lbs College Of Engineering Kasaragod
+
+### Project Description
+its a whatsapp bot which would respond to our commands, which are useless commands, after setting up, send /help to get help
+
+### The Problem (that doesn't exist)
+our emojis doesnt have hair, we dont have good timer, we dont get good advices, we dont know who we are
+
+### The Solution (that nobody asked for)
+bot can give emojis hair, have useless timer which wouldnt work,bot give useless advices, bot predicts who we are.
+
+## Technical Details
+### Technologies/Components Used
+For Software:
+- NodeJs
+- @Whiskeysockets/Balieys
+
+
+### Implementation
+For Software:
+# Installation
+git clone https://github.com/dev-sriji/useless-whatsapp-bot.git
+cd useless-whatsapp-bot
+npm install
+
+# Run
+npm start
+
+### Project Documentation
+For Software:
+
 # Useless WhatsApp Bot
 
 A fun and totally useless WhatsApp bot created by [dev-sriji](https://github.com/dev-sriji). This bot is designed purely for entertainment and is not meant for serious use.
@@ -10,75 +48,55 @@ A fun and totally useless WhatsApp bot created by [dev-sriji](https://github.com
 - Responds to simple messages with quirky replies.
 - Designed for fun and enjoyment.
 
-## Getting Started
 
-### Prerequisites
+# Screenshots (Add at least 3)
+![Screenshot1](Add screenshot 1 here with proper name)
+Add caption explaining what this shows
 
-Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+![Screenshot2](Add screenshot 2 here with proper name)
+Add caption explaining what this shows
 
-### Installation
+![Screenshot3](Add screenshot 3 here with proper name)
+Add caption explaining what this shows
 
-1. Clone the repository:
+# Diagrams
+![Workflow](Add your workflow/architecture diagram here)
+Add caption explaining your workflow
 
-   ```bash
-   git clone https://github.com/dev-sriji/useless-whatsapp-bot.git
-   cd useless-whatsapp-bot
-   ```
+For Hardware:
 
-2. Install the necessary dependencies:
+# Schematic & Circuit
+![Circuit](Add your circuit diagram here)
+Add caption explaining connections
 
-   ```bash
-   npm install
-   ```
+![Schematic](Add your schematic diagram here)
+Add caption explaining the schematic
 
-### Scripts
+# Build Photos
+![Components](Add photo of your components here)
+List out all components shown
 
-- **Start the bot:**
+![Build](Add photos of build process here)
+Explain the build steps
 
-   ```bash
-   npm start
-   ```
+![Final](Add photo of final product here)
+Explain the final build
 
-- **Build/Install dependencies:**
+### Project Demo
+# Video
+[Add your demo video link here]
+Explain what the video demonstrates
 
-   ```bash
-   npm build
-   ```
+# Additional Demos
+[Add any extra demo materials/links]
 
-- **Run tests:**
+## Team Contributions
+- [Name 1]: [Specific contributions]
+- [Name 2]: [Specific contributions]
+- [Name 3]: [Specific contributions]
 
-   ```bash
-   npm test
-   ```
+---
+Made with ❤️ at TinkerHub Useless Projects
 
-   *Note: No tests have been specified yet.*
-
-## Deployment
-
-You can deploy this bot to various platforms like:
-
-- [Replit](https://replit.com/)
-- [Seenode](https://seenode.io/)
-- [Boxmine](https://boxmine.com/)
-- [Koyeb](https://koyeb.com/)
-- [Heroku](https://heroku.com/)
-- [Railway](https://railway.app/)
-
-Follow the platform-specific instructions to deploy the bot.
-
-## Contributing
-
-Feel free to fork the repository and make a pull request with your contributions. Let's make this bot even more fun!
-
-## Developer Contact
-
-For any inquiries or suggestions, feel free to reach out:
-
-**Email:** [srijith.developer@gmail.com](mailto:srijith.developer@gmail.com)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-Let me know if you need any more adjustments!
+![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
+![Static Badge](https://img.shields.io/badge/UselessProject--24-24?link=https%3A%2F%2Fwww.tinkerhub.org%2Fevents%2FQ2Q1TQKX6Q%2FUseless%2520Projects)
