@@ -10,6 +10,35 @@ import getRandomMessageBusy from "./src/busy.js";
 import getRandomMood from "./src/getmood.js";
 import fs from "fs";
 import axios from "axios";
+const usedPrefix = "/";
+
+async function fetchSimTalk(text, version = "v1", lc = "en", key = "") {
+  const url = `https://api.simsimi.vn/${version}/simtalk`;
+
+  const params = new URLSearchParams();
+  params.append("text", text);
+  params.append("lc", lc);
+  params.append("key", key);
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: params.toString(),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Fetch error:", error);
+  }
+}
 
 const adviceApi = "https://api.adviceslip.com/advice";
 
@@ -63,6 +92,34 @@ async function connectToWhatsApp() {
         messages[0]?.message?.viewOnceMessageV2?.caption,
       key: messages[0]?.key?.id || "",
     };
+
+    const helpMessage = `🛡️〓〓🛡️♚ *CASPER BOT* ♔🛡️〓〓🛡️
+    ┋ 🏰 *¡Hello ${m.name}* 🏰
+    ┋┅┅┅┅┅┅┅┅┅┅┅┅┅
+    ┋ 🏞️ *¡Welcome To Useless Bot!*
+    ┋┅┅┅┅┅┅┅┅┅┅┅┅┅
+
+
+    ┋┅┅┅┅┅┅┅┅┅┅┅┅┅
+    ┋ 🏰 *¡ Useful Commands !* 🏰
+    ┋┅┅┅┅┅┅┅┅┅┅┅┅┅
+    ┋➥ ❖⃟⚔ *${usedPrefix}help* - To Get Help
+    ┋➥ ❖⃟⚔ *${usedPrefix}advice* - To Get Useful advice
+    ┋➥ ❖⃟⚔ *${usedPrefix}timer* - To Create Useful Timer
+    ┋➥ ❖⃟⚔ *${usedPrefix}emoji*  - Try it 😉 ( usage : /emoji <emojis>)
+    ┋➥ ❖⃟⚔ *${usedPrefix}whoami*  - To Know Who You Are}
+    ┋┅┅┅┅┅┅┅┅┅┅┅┅┅
+
+
+    ┋┅┅┅┅┅┅┅┅┅┅┅┅┅
+    ┋ 🏰 *¡ Useless Commands !* 🏰
+    ┋┅┅┅┅┅┅┅┅┅┅┅┅┅
+    ┋➥ ❖⃟⚔ *${usedPrefix}heyy* - useless (does nothing)}
+    ┋➥ ❖⃟⚔ *${usedPrefix}try* - useless (does nothing)}
+    ┋➥ ❖⃟⚔ *${usedPrefix}this* - useless (does nothing)}
+    ┋┅┅┅┅┅┅┅┅┅┅┅┅┅
+
+    🛡️〓〓🛡️ *CASPER BOT* 🛡️〓〓🛡️`;
 
     if (messages[0]?.key?.fromMe) {
       return;
@@ -134,7 +191,7 @@ async function connectToWhatsApp() {
         case "timer":
           if (!tokens[1]) {
             await sock.sendMessage(m.sender, {
-              text: "Wrong usage of command\n\tEg: /timer 122\n\t/timer 43s\n\t/timer 23s33m",
+              text: "Wrong usage of command\n\tEg: /timer 122s\n\t/timer 43m\n\t/timer 23s33m",
             });
             break;
           }
@@ -170,7 +227,9 @@ async function connectToWhatsApp() {
         case "emojihair":
         case "hair":
           if (!tokens[1]) {
-            console.log("No Emoji");
+            await sock.sendMessage(m.sender, {
+              text: "Wrong usage of command\n\tEg: /emoji 😉\n\t/emoji 🫣\n\t/emoji hello 🫣",
+            });
           } else {
             await sock.sendMessage(m.sender, {
               text: "Adding Hair To Your Emoji...",
@@ -182,26 +241,27 @@ async function connectToWhatsApp() {
             }, 2000);
           }
           break;
-        case "guessmymood":
+        case "whoami":
           const mood = getRandomMood();
-          await sock.sendMessage(
-            m.sender,
-            {
-              image: { url: "https://cataas.com/cat/sad" },
-              caption: "Here is an image from a URL!",
-            },
-            { ephemeralExpiration: 86400 }, // Corrected typo
-          );
-
-          // await sock.sendMessage(m.sender, {
-          //   text: "I think you are " + mood,
-          // });
+          await sock.sendMessage(m.sender, {
+            text: "I think you are " + mood,
+          });
           // setTimeout(async function () {
           //   await sock.sendMessage(m.sender, { text: "result" });
           // }, 2000);
           break;
         case "cat":
           sendGif("https://cataas.com/cat/gif", m.sender);
+          break;
+        case "help":
+          await sock.sendMessage(m.sender, {
+            text: helpMessage,
+          });
+          break;
+        case "ai":
+          fetchSimTalk(m.text.replace(".ai", "").replace("/ai", "")).then(
+            (response) => console.log(response),
+          );
           break;
       }
     }
