@@ -60,22 +60,12 @@ testing the commands which is mentioned in /help
 testing the commands which is mentioned in /help
 
 
-# Build Photos
-![Components](Add photo of your components here)
-List out all components shown
-
-![Build](Add photos of build process here)
-Explain the build steps
-
-![Final](Add photo of final product here)
-Explain the final build
-
 ### Project Demo
 # Video
-[Add your demo video link here]
-Explain what the video demonstrates
+[https://youtu.be/Kt8r5YaoMMg?si=FkqG9K6fdroO6AtO]
+Demo Of the Bot Working
 
-## Team Contributions
+## Contributions
 - [SRIJITH K]: [All]
 
 ---
