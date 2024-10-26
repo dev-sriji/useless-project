@@ -50,27 +50,15 @@ A fun and totally useless WhatsApp bot created by [dev-sriji](https://github.com
 
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-Add caption explaining what this shows
+![Screenshot1](https://github.com/user-attachments/assets/228b491d-d0b2-4675-a2af-a861c8448b56)
+sending /help to the user(bot) which is connected to this project (this app)
 
-![Screenshot2](Add screenshot 2 here with proper name)
-Add caption explaining what this shows
+![Screenshot2](https://github.com/user-attachments/assets/713b7474-b001-45af-b289-5b129465a6df))
+testing the commands which is mentioned in /help
 
-![Screenshot3](Add screenshot 3 here with proper name)
-Add caption explaining what this shows
+![Screenshot3](https://github.com/user-attachments/assets/1cd8536f-2268-44d2-b704-bbc3d7b73bc8))
+testing the commands which is mentioned in /help
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-Add caption explaining your workflow
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-Add caption explaining connections
-
-![Schematic](Add your schematic diagram here)
-Add caption explaining the schematic
 
 # Build Photos
 ![Components](Add photo of your components here)
@@ -87,13 +75,8 @@ Explain the final build
 [Add your demo video link here]
 Explain what the video demonstrates
 
-# Additional Demos
-[Add any extra demo materials/links]
-
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [SRIJITH K]: [All]
 
 ---
 Made with ❤️ at TinkerHub Useless Projects
